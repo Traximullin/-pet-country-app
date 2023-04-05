@@ -1,10 +1,29 @@
 import { type FC } from "react"
-import { BaseLayout } from "./presentation/layouts"
+import { BaseLayout, Flex } from "./presentation/layouts"
+import { CountryCard } from "./presentation/components"
 
 const App: FC = () => {
     return (
         <BaseLayout>
-            123123
+            <Flex flexDirection="row" gap={12} flexWrap="wrap">
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+                <CountryCard />
+            </Flex>
         </BaseLayout>
     )
 }

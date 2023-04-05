@@ -1,7 +1,6 @@
 import { type FC } from "react"
 import "./index.scss"
-import Header from "../Header"
-import Footer from "../Footer"
+import { Header, Footer } from "../index"
 import type IBaseLayout from "./interface"
 
 const BaseLayout: FC<IBaseLayout> = (props) => {
@@ -10,7 +9,7 @@ const BaseLayout: FC<IBaseLayout> = (props) => {
     return (
         <div className="base-layout">
             <Header />
-            <div>
+            <div data-grid="23">
                 {children}
             </div>
             <Footer />
