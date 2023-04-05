@@ -1,1 +1,2 @@
-export { default as CountryCard } from "./CountryCard/index"
+export { default as CountryCard } from "./CountryCard"
+export { default as List } from "./List"
