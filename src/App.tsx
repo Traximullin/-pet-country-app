@@ -3,7 +3,9 @@ import { BaseLayout } from "./presentation/layouts"
 
 const App: FC = () => {
     return (
-        <BaseLayout/>
+        <BaseLayout>
+            123123
+        </BaseLayout>
     )
 }
 
