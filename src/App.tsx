@@ -1,10 +1,10 @@
+import { type FC } from "react"
+import { BaseLayout } from "./presentation/layouts"
 
-function App() {
-  return (
-    <div>
-        Hello
-    </div>
-  );
+const App: FC = () => {
+    return (
+        <BaseLayout/>
+    )
 }
 
-export default App;
+export default App
