@@ -1,6 +1,6 @@
 import { type FC } from "react"
 import { Routes, Route } from "react-router-dom"
-import { HomePage } from "../../../presentation/pages"
+import { HomePage, ShowCountryPage } from "../../../presentation/pages"
 import { RouteEnum } from "../mainRoute"
 
 const Router: FC = () => (
@@ -8,6 +8,10 @@ const Router: FC = () => (
         <Route
             path={RouteEnum.HOME}
             element={<HomePage />}
+        />
+        <Route
+            path={`${RouteEnum.COUNTRY}/:id`}
+            element={<ShowCountryPage />}
         />
     </Routes>
 )

@@ -1,9 +1,12 @@
 import { type FC } from "react"
 import "./index.scss"
+import { type ICountryCard } from "./interface"
 
-const CountryCard: FC = () => {
+const CountryCard: FC<ICountryCard> = (props) => {
+    const { onClick, } = props
+
     return (
-        <article className="country-card">
+        <article className="country-card" onClick={onClick}>
             <img
                 className="country-card__flag"
                 src="https://upload.wikimedia.org/wikipedia/commons/9/9f/%D0%A4%D0%BB%D0%B0%D0%B3_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8_%281%29.jpg"
