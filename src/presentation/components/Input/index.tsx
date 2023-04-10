@@ -1,13 +1,16 @@
-import { type FC } from "react"
+import { type ForwardRefRenderFunction, forwardRef } from "react"
 import "./index.scss"
 import { type IInput } from "./interface"
 
-const Input: FC<IInput> = (props) => {
-    const { ...othersProps } = props
+const Input:
+    ForwardRefRenderFunction<HTMLInputElement, IInput> = (props, ref) => {
+        const { ...othersProps } = props
 
-    return (
-        <input className="input" {...othersProps} />
-    )
-}
+        return (
+            <input className="input" {...othersProps} ref={ref}/>
+        )
+    }
 
-export default Input
+Input.displayName = "Input"
+
+export default forwardRef(Input)

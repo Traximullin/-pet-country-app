@@ -10,9 +10,9 @@ const CountryCard: FC = () => {
                 alt="flag"
             />
             <div className="country-card__desc">
-                <h3 className="country-card__title">
+                <p className="country-card__title">
                     Russland
-                </h3>
+                </p>
                 <ul className="country-card__list">
                     <li>
                         <b>Polulation: </b>
