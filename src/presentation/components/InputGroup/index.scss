@@ -1,0 +1,11 @@
+.input-group {
+    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+
+    &:has(.input-left-element) {
+        .input {
+            box-shadow: none;
+            border-radius: 0 7px 7px 0;
+        }
+    }
+
+}
