@@ -1,8 +1,8 @@
+@import "../../../main/utils/styles/variables";
 
 .input-left-element {
     padding: 14px 7px 14px 20px;
-    border-radius: 7px 0 0 7px;
-    // box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    border-radius: $border-radius 0 0 $border-radius;
     font-size: 16px;
     background-color: white;
 
