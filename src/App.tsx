@@ -1,5 +1,5 @@
 import { type FC } from "react"
-import { BaseLayout, Header } from "./presentation/layouts"
+import { BaseLayout, Container, Header } from "./presentation/layouts"
 import Router from "./main/routes/router"
 
 const App: FC = () => {
@@ -7,7 +7,9 @@ const App: FC = () => {
         <>
             <Header />
             <BaseLayout>
-                <Router />
+                <Container>
+                    <Router />
+                </Container>
             </BaseLayout>
         </>
     )

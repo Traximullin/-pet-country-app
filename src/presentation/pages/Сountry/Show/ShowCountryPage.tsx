@@ -1,11 +1,19 @@
 import { type FC } from "react"
-import { Container } from "../../../layouts"
+import { Button, Details } from "../../../components"
+import { useNavigate } from "react-router-dom"
 
 const ShowCountryPage: FC = () => {
+    const navigate = useNavigate()
+
+    const handleBackClick = (): void => {
+        navigate(-1)
+    }
+
     return (
-        <Container>
-            1
-        </Container>
+        <>
+            <Button onClick={handleBackClick}>Back</Button>
+            <Details />
+        </>
     )
 }
 

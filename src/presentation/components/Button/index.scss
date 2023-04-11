@@ -1,0 +1,13 @@
+@import "../../../main/utils/styles/variables";
+
+.button {
+    box-shadow: $box-shadow;
+    padding: 0 1rem;
+    line-height: 2.5;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: $border-radius;
+    color: #111517;
+}
