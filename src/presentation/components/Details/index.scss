@@ -23,6 +23,7 @@
     }
 
     &__title {
+        color: var(--colors-text);
         font-size: 2em;
         margin-bottom: 0.7rem;
     }
@@ -31,7 +32,7 @@
         display: flex;
         gap: 2rem;
         flex-direction: column;
-
+        color: var(--colors-text);
         @media (min-width: 1024px) {
             flex-direction: row;
             gap: 4rem
@@ -53,7 +54,8 @@
         align-items: flex-start;
         gap: 1.5rem;
         margin-top: 3rem;
-
+        color: var(--colors-text);
+        
         @media (min-width: 767px) {
             flex-direction: row;
             align-items: center;
