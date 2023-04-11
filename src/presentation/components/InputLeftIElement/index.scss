@@ -1,10 +1,10 @@
-@import "../../../main/utils/styles/variables";
-
 .input-left-element {
+    display: block;
+    width: max-content;
     padding: 14px 7px 14px 20px;
-    border-radius: $border-radius 0 0 $border-radius;
+    border-radius: var(--radius) 0 0 var(--radius);
     font-size: 16px;
-    background-color: white;
+    background-color: var(--colors-ui-base);
 
     img {
         vertical-align: middle;

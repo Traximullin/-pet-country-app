@@ -1,0 +1,8 @@
+.toggle-theme {
+    cursor: pointer;
+    user-select: none;
+
+    &__title {
+        text-transform: capitalize;
+    }
+}
