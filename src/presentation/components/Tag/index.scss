@@ -2,8 +2,8 @@
 
 .tag {
     padding: 0 1rem;
-    background-color: #fff;
+    background-color: var(--colors-ui-base);
     cursor: pointer;
     line-height: 1.5;
-    box-shadow: $box-shadow;
+    box-shadow: var(--shadow);
 }

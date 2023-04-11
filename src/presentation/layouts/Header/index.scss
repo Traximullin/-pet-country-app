@@ -1,9 +1,26 @@
+
 .header {
-    padding: 12px;
-    color: #1D3557;
-    box-shadow: rgba(149,157,165,0.2) 0px 8px 24px;
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    height: 8vh;
+    color: var(--colors-text);
+    background-color: var(--colors-ui-base);
+    box-shadow: var(--shadow);
+    
     &__title {
-        font-size: 32px;
+        font-size: 1em;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1240px;
+        padding: 0 2rem;
+        padding: 28;
+        margin: 0 auto;
     }
 
 }
