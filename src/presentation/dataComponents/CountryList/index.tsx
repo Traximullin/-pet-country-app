@@ -2,28 +2,29 @@ import { type FC } from "react"
 import { useNavigate } from "react-router-dom"
 import { RouteEnum } from "../../../main/routes/mainRoute"
 import { CountryCard, List } from "../../components"
+import { useGetAllCountriesQuery } from "../../store/services/country/countryApi"
 
 const CountryList: FC = () => {
     const navigation = useNavigate()
 
+    const { data: countries, isLoading, isError, } = useGetAllCountriesQuery("")
+
     return (
         <List>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
-            <CountryCard onClick={() => { navigation(`${RouteEnum.COUNTRY}/1`) }}/>
+            {
+                countries?.map(country => (
+                    <CountryCard
+                        key={`country-list-item-${country.name.common}`}
+                        title={country.name.common}
+                        population={country.population}
+                        region={country.region}
+                        capital={country.capital?.join(" ")}
+                        src={country.flags.png}
+                        alt={country.flags.alt}
+                        onClick={() => { navigation(`${RouteEnum.COUNTRY}/${country.name.common}`) }}
+                    />
+                ))
+            }
         </List>
     )
 }
