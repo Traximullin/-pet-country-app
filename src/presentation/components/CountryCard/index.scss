@@ -11,6 +11,10 @@
     
     &__flag {
         width: 100%;
+        min-height: 200px;
+        max-height: 200px;
+        object-fit: contain;
+        background-color: var(--colors-ui-base);
     }
     
     &__title {
