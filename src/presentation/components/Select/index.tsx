@@ -1,13 +1,12 @@
 import { type FC, useId, Children, createElement } from "react"
 import "./index.scss"
-import { type ISelect } from "./interface"
+import { type IOption, type ISelect } from "./interface"
 
 // !TODO рефакторить
 
 const Select: FC<ISelect> = (props) => {
     const id = useId()
-
-    const { children, placeholder, } = props
+    const { children, placeholder, value, handleChangeClick, } = props
 
     return (
         <div className="select">
@@ -20,19 +19,28 @@ const Select: FC<ISelect> = (props) => {
                 htmlFor={`select-${id}`}
                 className="select__wrapper"
             >
-                {placeholder}
+                {value || placeholder}
             </label>
             <label className="select__closure" htmlFor={`select-${id}`}/>
             <ul className="select__list">
                 {
                     children &&
-                        Children.map(children, child => (
-                            createElement(
-                                "li",
-                                { className: "select__list-item", },
-                                123
+                        Children.map(children, child => {
+                            const item = child as IOption
+
+                            return (
+                                createElement(
+                                    "li",
+                                    {
+                                        className: "select__list-item",
+                                        onClick: () => {
+                                            handleChangeClick(item.props.value as string)
+                                        },
+                                    },
+                                    item.props.children
+                                )
                             )
-                        ))
+                        })
                 }
             </ul>
         </div>
