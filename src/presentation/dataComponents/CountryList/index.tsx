@@ -7,7 +7,7 @@ import { useAppSelector } from "../../store/hooks"
 
 const CountryList: FC = () => {
     const navigation = useNavigate()
-    const search = useAppSelector(state => state.controls.search)
+    const { search, region, } = useAppSelector(state => state.controls)
 
     const { data: countries, isLoading, isError, } = useGetAllCountriesQuery("")
 
@@ -15,7 +15,10 @@ const CountryList: FC = () => {
         <List>
             {
                 countries?.map(country => (
-                    country.name.common.toLowerCase().includes(search.toLowerCase()) &&
+                    (
+                        country.name.common.toLowerCase().includes(search.toLowerCase()) &&
+                        country.region.includes(region)
+                    ) &&
 
                     <CountryCard
                         key={`country-list-item-${country.name.common}`}
