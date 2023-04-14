@@ -14,6 +14,12 @@ const CountryList: FC = () => {
     return (
         <List>
             {
+                isLoading && <p>Loading...</p>
+            }
+            {
+                isError && <p>An error has occurred</p>
+            }
+            {
                 countries?.map(country => (
                     (
                         country.name.common.toLowerCase().includes(search.toLowerCase()) &&

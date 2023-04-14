@@ -5,16 +5,18 @@ import { useGetCountryByNameQuery } from "../../../store/services/country/countr
 
 const ShowCountryPage: FC = () => {
     const navigate = useNavigate()
-    const { id, } = useParams()
+    const { name, } = useParams()
 
-    const { data: country, isLoading, } = useGetCountryByNameQuery(id as string)
+    const { data: country, isLoading, isError, } = useGetCountryByNameQuery(name as string)
 
     const handleBackClick = (): void => {
         navigate(-1)
     }
-    console.log(country)
+
     return (
         <>
+            {isLoading && <p>Loading...</p>}
+            {isError && <p>An error has occurred</p>}
             <Button onClick={handleBackClick}>Back</Button>
             {
                 !isLoading &&

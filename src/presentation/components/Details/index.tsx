@@ -2,6 +2,7 @@ import { type FC } from "react"
 import "./index.scss"
 import { type IDetails } from "./interface"
 import Tag from "../Tag"
+import { numberFormatter } from "../../helper/numberFormatter"
 
 const Details: FC<IDetails> = (props) => {
     const {
@@ -28,7 +29,7 @@ const Details: FC<IDetails> = (props) => {
                         </li>
                         <li className="details__list-item">
                             <b>Population:</b>
-                            {population}
+                            {numberFormatter(Number(population))}
                         </li>
                         <li className="details__list-item">
                             <b>Region:</b>
@@ -58,13 +59,15 @@ const Details: FC<IDetails> = (props) => {
                     <b>Border Countries:</b>
                     <div className="details__list-tag">
                         {
-                            borders?.map((border, index) => (
-                                <Tag
-                                    key={`border-country-${border}-${index}`}
-                                >
-                                    {border}
-                                </Tag>
-                            ))
+                            borders
+                                ? borders?.map((border, index) => (
+                                    <Tag
+                                        key={`border-country-${border}-${index}`}
+                                    >
+                                        {border}
+                                    </Tag>
+                                ))
+                                : <p>None border</p>
                         }
                     </div>
                 </div>
