@@ -3,7 +3,7 @@ import { ALL_COUNTRIES, BASE_URL, COUNTRY_BY_NAME } from "../../../../main/api/c
 import { type CountriesResponse } from "./country.model"
 
 export const countryApi = createApi({
-    reducerPath: "pokemonApi",
+    reducerPath: "countryApi",
     baseQuery: fetchBaseQuery({
         baseUrl: BASE_URL,
     }),
