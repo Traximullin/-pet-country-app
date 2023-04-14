@@ -1,6 +1,7 @@
 import { type FC } from "react"
 import "./index.scss"
 import { type ICountryCard } from "./interface"
+import { numberFormatter } from "../../helper/numberFormatter"
 
 const CountryCard: FC<ICountryCard> = (props) => {
     const { onClick, title, population, region, capital, src, alt, } = props
@@ -19,7 +20,7 @@ const CountryCard: FC<ICountryCard> = (props) => {
                 <ul className="country-card__list">
                     <li>
                         <b>Polulation: </b>
-                        {population}
+                        {numberFormatter(population)}
                     </li>
                     <li>
                         <b>Region: </b>

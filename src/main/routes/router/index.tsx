@@ -10,7 +10,7 @@ const Router: FC = () => (
             element={<HomePage />}
         />
         <Route
-            path={`${RouteEnum.COUNTRY}/:id`}
+            path={`${RouteEnum.COUNTRY}/:name`}
             element={<ShowCountryPage />}
         />
     </Routes>
